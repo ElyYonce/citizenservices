@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: Top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Menu {
+  background-color: #888a89;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: Top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 15%;
+}
+
+.MenuItem {
+  color: #61dafb;
+  align-self: flex;
+  padding: 10px 0;
+}
+
+.ActionArea {
+  width:85%;
+  align-items: center;
+  background-color:white;
+  color: black;
+}
+
+.BodyArea {
+  background-color: black;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: Top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.AvailableServices {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: Top;
+  font-size: calc(10px + 2vmin);
+}
+
+.ServiceCard {
+  background-color: white;
+  width: 40%;
+  padding: 10px 0;
+}
+
+.ServiceCardHeader {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+}
+
+.ApplyContainer {
+  text-align: center;
+  padding: 10px;
+  width:25%;
+  padding: 32px 0;
+  border: 1px solid black;
+}
+
+.ServiceTitle {
+  text-align: center;
+  width:75%;
+  padding: 0px 0;
+  border: 1px solid black;
+}
+
+.ServiceCardBody {
+  font-size:15px;
+  border: 1px solid black;
+  padding: 0px 0;
+}
+
+.ServiceCardHeaderIneligible{
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+}
+
+
