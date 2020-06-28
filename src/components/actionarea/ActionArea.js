@@ -15,10 +15,7 @@ class ActionArea extends React.Component {
     super(props);
     this.state = {
                  data:{},
-                 isLoading:true,
-                 CaseInsKey: "",
-                 AssignmentInsKey: "",
-                 AssignmentActionInsKey: ""
+                 isLoading:true
                  };
     }
     
