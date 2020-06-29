@@ -8,6 +8,7 @@ import {
 import Worklist from '../worklist/Worklist';
 import ReportViewer from '../reportviewer/ReportViewer';
 import AvalibleServices from '../availableservices/AvalibleServices';
+import ServiceApplication from '../serviceapplication/ServiceApplication';
 import { userService } from '../../services/userservice';
 
 class ActionArea extends React.Component {
@@ -39,6 +40,9 @@ class ActionArea extends React.Component {
          </Route>
          <Route path="/worklist">
               <Worklist />
+         </Route>
+         <Route path="/serviceapplication">
+              <ServiceApplication />
          </Route>
          <Route path="/">
               <AvalibleServices />

@@ -24,7 +24,7 @@ class AvalibleServices extends React.Component {
                    service.Ineligible.localeCompare("true") ? "ServiceCardHeader" : "ServiceCardHeaderIneligible"
                         }>
           <div className="ApplyContainer">
-            <Link to='/serviceapplication'> Apply </Link>
+            <Link to={'/serviceapplication?workClass=' + service.WorkClass + '&serviceName=' + service.ServiceName}> Apply </Link>
           </div>
           <div className="ServiceTitle">
             <h5>{service.ServiceName}</h5>
