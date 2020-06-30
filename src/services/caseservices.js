@@ -26,7 +26,7 @@ function getCaseTypes() {
 }
 
 function getCaseCreationPage(id) {
-    return axios.
+    return axios
       .get(endpoints.BASEURL + endpoints.CASETYPES + "/" + id, {
           headers: authHeader()
        })
@@ -39,7 +39,7 @@ function getCaseCreationPage(id) {
 }
 
 function createCase(id, content) {
-    return axios.
+    return axios
       .post(endpoints.BASEURL + endpoints.CASES,
       {
         caseTypeID: id,
@@ -59,7 +59,7 @@ function createCase(id, content) {
 }
 
 function getCase(id) {
-    return axios.
+    return axios
       .get(encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + id), {
          headers: {
            ...authHeader(),
@@ -78,7 +78,7 @@ function getCase(id) {
 function updateCase(id, body, etag, action) {
     let actionParam = action ? { actionID: action } : null;
     
-    return axios.
+    return axios
       .put(
        encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + id),
         {
@@ -98,7 +98,8 @@ function updateCase(id, body, etag, action) {
       .catch(function(error) {
          return Promise.reject("update case failed");
        });
-    
+      }
+
 function refreshCase(myCase, body) {
     return axios
       .put(
@@ -126,7 +127,7 @@ function refreshCase(myCase, body) {
 function getPage(caseID, pageID) {
     return axios
       .get(
-        encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + caseID + endpoints.PAGES + "/" + endpoints.PAGES + "/" + pageID)
+        encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + caseID + endpoints.PAGES + "/" + endpoints.PAGES + "/" + pageID),
         {
            headers: {
             ...authHeader()
@@ -136,13 +137,13 @@ function getPage(caseID, pageID) {
       .then(function(response) {
          return response.data;
        })
-      .catch(
+      .catch( function(error){
          return Promise.reject("get page API failed");
-       );
+      });
 }
 
 function getView(caseID, viewID) {
-    return axios.
+    return axios
        .get(
          encodeURI(
            endpoints.BASEURL + endpoints.CASES + "/" + caseID + endpoints.VIEWS + "/" + viewID
@@ -156,9 +157,9 @@ function getView(caseID, viewID) {
        .then(function(error) {
          return response.data;
         })
-       .catch(
+       .catch(function(error){
          return Promise.reject("get View API failed");
-        );
+        });
 }
 
 function cases() {
@@ -170,25 +171,5 @@ function cases() {
        .catch(function(error) {
           return Promise.reject("Cases API failed");
         });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      }
+      

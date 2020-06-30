@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Link from "react-router-dom";
+import { caseService } from '../../services/caseservice';
+
 
 class ServiceApplication extends React.Component {
     
