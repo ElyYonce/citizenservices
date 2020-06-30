@@ -8,6 +8,7 @@ class AvalibleServices extends React.Component {
     constructor(props) {
     super(props);
     this.state = {};
+    //this.setCaseInfo = this.props.setCaseInfo.bind(this);
     }  
     
     //runs when the component is being loaded
@@ -24,7 +25,8 @@ class AvalibleServices extends React.Component {
                    service.Ineligible.localeCompare("true") ? "ServiceCardHeader" : "ServiceCardHeaderIneligible"
                         }>
           <div className="ApplyContainer">
-            <Link to='/serviceapplication'> Apply </Link>
+            <Link to='/serviceapplication'
+             onClick={() => this.props.setCaseInfo(service)}> Apply </Link>
           </div>
           <div className="ServiceTitle">
             <h5>{service.ServiceName}</h5>

@@ -13,6 +13,7 @@ class AvalibleServices extends React.Component {
                  data:{},
                  isLoading:true
                  };
+    //this.setCaseInfo = this.props.setCaseInfo.bind(this);
     }
     
     getAvalibleServices = async (event) => {
@@ -24,7 +25,7 @@ class AvalibleServices extends React.Component {
     //runs when the component is being loaded
     componentDidMount(){
         this.setState({data: this.getAvalibleServices()});
-        console.log(this.state.data);
+        //console.log(this.state.data);
     }
     
     render(){
@@ -33,7 +34,7 @@ class AvalibleServices extends React.Component {
       <div className="AvailableServices">
         <h2>Avalible Services</h2>
         {isLoading ? "Loading..." : this.state.data.pxResults.map(service => {
-            return <ServiceCard key={service.Id} service={service} />;       
+            return <ServiceCard key={service.Id} service={service} setCaseInfo={this.props.setCaseInfo} />;       
             })}
       </div>
         );
