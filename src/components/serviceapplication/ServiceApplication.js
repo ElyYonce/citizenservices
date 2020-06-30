@@ -10,23 +10,22 @@ class ServiceApplication extends React.Component {
                  data:{},
                  isLoading:true,
                  workClass: "",
-                 serviceName: "default"
+                 serviceName: "default",
+                 service:{}
                  };
     }
     
     
     //runs when the component is being loaded
     componentDidMount(){
-        var urlParams = new URLSearchParams(window.location.search);
-        const workClass = urlParams.get('workClass');
-        const serviceName = urlParams.get('serviceName');
-        this.setState({serviceName:serviceName})
+        this.setState({service:this.props.service})
+        console.log(this.props.service);
     }
     
     render(){
-        const { data, isLoading, serviceName } = this.state;
+        const { data, isLoading, serviceName,service } = this.state;
         return (
-           <h3>{serviceName} Application</h3>
+           <h3>{service.ServiceName} Application</h3>
         );
     }
 }

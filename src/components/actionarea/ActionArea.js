@@ -16,8 +16,17 @@ class ActionArea extends React.Component {
     super(props);
     this.state = {
                  data:{},
-                 isLoading:true
+                 isLoading:true,
+                 CaseInfo: {}
                  };
+
+    this.setCaseInfo = this.setCaseInfo.bind(this);
+    }
+
+    setCaseInfo(inputCaseInfo) {
+         //console.log(inputCaseInfo);
+         this.setState({CaseInfo: inputCaseInfo});
+         //console.log(this.state.CaseInfo);
     }
     
    
@@ -29,6 +38,7 @@ class ActionArea extends React.Component {
    componentDidMount(){
        //login using the credentials defined in the services/creds file
        this.login();
+       //setInterval(this.CaseInfo, 1000);
    }
     
    render(){
@@ -42,10 +52,10 @@ class ActionArea extends React.Component {
               <Worklist />
          </Route>
          <Route path="/serviceapplication">
-              <ServiceApplication />
+              <ServiceApplication service={this.state.CaseInfo}/>
          </Route>
          <Route path="/">
-              <AvalibleServices />
+              <AvalibleServices setCaseInfo={this.setCaseInfo} />
           </Route>          
        </Switch>
      </div>
