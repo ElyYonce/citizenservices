@@ -1,5 +1,5 @@
 import React from 'react';
-import { caseService } from '../../services/caseservice';
+import { caseService } from '../../services/caseservices';
 
 
 class ServiceApplication extends React.Component {

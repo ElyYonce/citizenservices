@@ -82,7 +82,7 @@ function updateCase(id, body, etag, action) {
       .put(
        encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + id),
         {
-          content: ReferenceHelper.getPostContent(body)
+          content: test//ReferenceHelper.getPostContent(body)
         },
         {
           params: actionParam,
@@ -154,7 +154,7 @@ function getView(caseID, viewID) {
            }
          }
         )
-       .then(function(error) {
+       .then(function(response) {
          return response.data;
         })
        .catch(function(error){
@@ -172,4 +172,3 @@ function cases() {
           return Promise.reject("Cases API failed");
         });
       }
-      
