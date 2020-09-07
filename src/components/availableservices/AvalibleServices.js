@@ -19,7 +19,7 @@ class AvalibleServices extends React.Component {
     getAvalibleServices = async (event) => {
        const resp = await dataPageService.getDataPage("D_EligibleServicesList", {});
        this.setState({data: resp, isLoading: false});
-       console.log(this.state.data);
+       //console.log(this.state.data);
    };
     
     //runs when the component is being loaded
@@ -32,7 +32,7 @@ class AvalibleServices extends React.Component {
         const { data, isLoading } = this.state;
         return (
       <div className="AvailableServices">
-        <h2>Avalible Services</h2>
+        <h2>Avalible Services</h2>     
         {isLoading ? "Loading..." : this.state.data.pxResults.map(service => {
             return <ServiceCard key={service.Id} service={service} setCaseInfo={this.props.setCaseInfo} />;       
             })}

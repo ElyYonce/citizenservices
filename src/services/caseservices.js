@@ -1,6 +1,8 @@
 import axios from "axios";
 import { endpoints } from "./endpoints";
 import {authHeader} from "./auth";
+import { ReferenceHelper } from "./ReferenceHelper";
+
 
 export const caseService = {
     getCaseTypes,
@@ -47,10 +49,12 @@ function createCase(id, content) {
         content: content
        },{
         headers: {
-        ...authHeader()
+        ...authHeader(),
+        "Access-Control-Expose-Headers": "etag"
         }
        })
       .then(function(response) {
+        response.data["etag"] = response.headers.etag;
         return response.data;
        })
       .catch(function(error) {
@@ -82,7 +86,7 @@ function updateCase(id, body, etag, action) {
       .put(
        encodeURI(endpoints.BASEURL + endpoints.CASES + "/" + id),
         {
-          content: test//ReferenceHelper.getPostContent(body)
+          content: ReferenceHelper.getPostContent(body)
         },
         {
           params: actionParam,
