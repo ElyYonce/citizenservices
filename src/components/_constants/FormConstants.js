@@ -7,7 +7,7 @@ export const fieldTypes = {
   TABLELAYOUT: "tableLayout",
   EMAIL: "pxEmail",
   DATETIME: "pxDateTime",
-  INTEGER: "pxInteger",
+  INTEGER: "Integer",
   PHONE: "pxPhone",
   DISPLAYTEXT: "pxDisplayText",
   HIDDEN: "pxHidden",
